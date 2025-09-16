@@ -413,8 +413,8 @@ function getStringFromTemplate(firstName, lastName) {
  *   extractNameFromTemplate('Hello, John Doe!') => 'John Doe'
  *   extractNameFromTemplate('Hello, Chuck Norris!') => 'Chuck Norris'
  */
-function extractNameFromTemplate(/* value */) {
-  throw new Error('Not implemented');
+function extractNameFromTemplate(value) {
+  return value.replace(/Hello, |!/gi, '');
 }
 
 /**
@@ -429,7 +429,7 @@ function extractNameFromTemplate(/* value */) {
  *   unbracketTag('<a>') => 'a'
  */
 function unbracketTag(str) {
-  return str.replace('>', '').replace('<', '');
+  return str.replace(/[><]/g, '');
 }
 
 /**
